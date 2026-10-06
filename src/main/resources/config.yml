@@ -1,35 +1,36 @@
 # World Trade food prices, paid in COPPER INGOT VALUE per item.
-# 10 copper = 1 iron, 100 copper = 1 gold, 1000 copper = 1 diamond.
-# Payment is automatically converted into the highest ingots possible.
-# Benchmark: a Stone Miner earns 2 gold (200 copper) per 64 stone (~3.1 each).
-# Each price below is the higher of the old and rebalanced price.
-# Golden apples and golden carrots are always refused (players already
-# have a reason to make those). Max 45 items shown in the menu.
+# 10 copper = 1 emerald, 10 emeralds = 1 iron (so 100 copper = 1 iron),
+# 10 iron = 1 gold, 10 gold = 1 diamond.
+# Payment is automatically converted into the highest ingots/emeralds possible.
+# Prices are the old values x10, so every food is worth the same in iron/gold
+# as before - it just pays out in emeralds now (e.g. 40 copper = 4 emeralds).
+# Benchmark: a Stone Miner earns 2 gold (2000 copper) per 64 stone.
+# Golden apples and golden carrots are always refused. Max 45 items shown.
 prices:
-  MELON_SLICE: 2
-  SWEET_BERRIES: 3
-  GLOW_BERRIES: 3
-  DRIED_KELP: 3          # "cooked kelp"
-  POTATO: 4
-  CARROT: 4
-  BEETROOT: 4
-  COOKIE: 4
-  APPLE: 5
-  BAKED_POTATO: 7
-  PUMPKIN: 8
-  COOKED_COD: 8
-  COOKED_SALMON: 9
-  COOKED_CHICKEN: 9
-  MELON: 10
-  COOKED_BEEF: 10
-  COOKED_PORKCHOP: 10
-  COOKED_MUTTON: 10
-  BREAD: 12
-  COOKED_RABBIT: 12
-  MUSHROOM_STEW: 14
-  HONEY_BOTTLE: 16
-  PUMPKIN_PIE: 20
-  SUSPICIOUS_STEW: 30
-  BEETROOT_SOUP: 32
-  RABBIT_STEW: 50
-  CAKE: 90
+  MELON_SLICE: 20
+  SWEET_BERRIES: 30
+  GLOW_BERRIES: 30
+  DRIED_KELP: 30          # "cooked kelp"
+  POTATO: 40
+  CARROT: 40
+  BEETROOT: 40
+  COOKIE: 40
+  APPLE: 50
+  BAKED_POTATO: 70
+  PUMPKIN: 80
+  COOKED_COD: 80
+  COOKED_SALMON: 90
+  COOKED_CHICKEN: 90
+  MELON: 100
+  COOKED_BEEF: 100
+  COOKED_PORKCHOP: 100
+  COOKED_MUTTON: 100
+  BREAD: 120
+  COOKED_RABBIT: 120
+  MUSHROOM_STEW: 140
+  HONEY_BOTTLE: 160
+  PUMPKIN_PIE: 200
+  SUSPICIOUS_STEW: 300
+  BEETROOT_SOUP: 320
+  RABBIT_STEW: 500
+  CAKE: 900
