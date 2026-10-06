@@ -13,7 +13,8 @@ public final class Currency {
     private Currency() {}
 
     public enum Tier {
-        COPPER_IRON(Material.COPPER_INGOT, Material.IRON_INGOT, 10),
+        COPPER_EMERALD(Material.COPPER_INGOT, Material.EMERALD, 10),
+        EMERALD_IRON(Material.EMERALD, Material.IRON_INGOT, 10),
         IRON_GOLD(Material.IRON_INGOT, Material.GOLD_INGOT, 10),
         GOLD_DIAMOND(Material.GOLD_INGOT, Material.DIAMOND, 10),
         DIAMOND_NETHERITE(Material.DIAMOND, Material.NETHERITE_INGOT, 36),
@@ -41,11 +42,12 @@ public final class Currency {
     /** Value of each payout currency in copper ingots (highest first). */
     private static final Map<Material, Long> VALUE = new LinkedHashMap<>();
     static {
-        VALUE.put(Material.NETHER_STAR, 1_440_000L); // 40 netherite
-        VALUE.put(Material.NETHERITE_INGOT, 36_000L);
-        VALUE.put(Material.DIAMOND, 1_000L);
-        VALUE.put(Material.GOLD_INGOT, 100L);
-        VALUE.put(Material.IRON_INGOT, 10L);
+        VALUE.put(Material.NETHER_STAR, 14_400_000L); // 40 netherite
+        VALUE.put(Material.NETHERITE_INGOT, 360_000L);
+        VALUE.put(Material.DIAMOND, 10_000L);
+        VALUE.put(Material.GOLD_INGOT, 1_000L);
+        VALUE.put(Material.IRON_INGOT, 100L);
+        VALUE.put(Material.EMERALD, 10L);
         VALUE.put(Material.COPPER_INGOT, 1L);
     }
 
