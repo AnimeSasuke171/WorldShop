@@ -1,0 +1,16 @@
+name: WorldTrade
+version: '${version}'
+main: com.example.worldtrade.WorldTradePlugin
+api-version: '26.1.2'
+description: Currency exchange, blacksmith scrapping and food trading menus.
+commands:
+  worldtrade:
+    description: Opens the World Trade menu
+    aliases: [wt]
+    permission: worldtrade.use
+    usage: /<command> [reload]
+permissions:
+  worldtrade.use:
+    default: true
+  worldtrade.reload:
+    default: op
