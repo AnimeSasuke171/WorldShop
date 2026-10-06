@@ -1,0 +1,33 @@
+# World Trade food prices, paid in COPPER INGOT VALUE per item.
+# 10 copper = 1 iron, 100 copper = 1 gold, 1000 copper = 1 diamond.
+# Payment is automatically converted into the highest ingots possible.
+# Golden apples and golden carrots are always refused (players already
+# have a reason to make those). Max 45 items shown in the menu.
+prices:
+  MELON_SLICE: 1
+  POTATO: 2
+  CARROT: 2
+  SWEET_BERRIES: 2
+  BEETROOT: 3
+  GLOW_BERRIES: 3
+  DRIED_KELP: 3          # "cooked kelp"
+  COOKIE: 4
+  BAKED_POTATO: 5
+  APPLE: 5
+  PUMPKIN: 6
+  BREAD: 8
+  COOKED_COD: 8
+  COOKED_CHICKEN: 9
+  COOKED_SALMON: 9
+  MELON: 10
+  COOKED_BEEF: 10
+  COOKED_PORKCHOP: 10
+  COOKED_MUTTON: 10
+  HONEY_BOTTLE: 12
+  COOKED_RABBIT: 12
+  MUSHROOM_STEW: 12
+  BEETROOT_SOUP: 15
+  PUMPKIN_PIE: 18
+  SUSPICIOUS_STEW: 25
+  RABBIT_STEW: 40
+  CAKE: 60
