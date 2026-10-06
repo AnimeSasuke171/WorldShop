@@ -17,22 +17,31 @@ public final class Currency {
         IRON_GOLD(Material.IRON_INGOT, Material.GOLD_INGOT, 10),
         GOLD_DIAMOND(Material.GOLD_INGOT, Material.DIAMOND, 10),
         DIAMOND_NETHERITE(Material.DIAMOND, Material.NETHERITE_INGOT, 36),
-        NETHERITE_STAR(Material.NETHERITE_INGOT, Material.NETHER_STAR, 40);
+        NETHERITE_STAR(Material.NETHERITE_INGOT, Material.NETHER_STAR, 40),
+        // Sell-only: players can turn a membrane INTO stars, but can never buy one.
+        STAR_MEMBRANE(Material.NETHER_STAR, Material.PHANTOM_MEMBRANE, 16, true);
 
         public final Material low;
         public final Material high;
         public final int rate; // how many "low" make one "high"
+        public final boolean sellOnly; // true = only high -> low is allowed
 
         Tier(Material low, Material high, int rate) {
+            this(low, high, rate, false);
+        }
+
+        Tier(Material low, Material high, int rate, boolean sellOnly) {
             this.low = low;
             this.high = high;
             this.rate = rate;
+            this.sellOnly = sellOnly;
         }
     }
 
     /** Value of each payout currency in copper ingots (highest first). */
     private static final Map<Material, Long> VALUE = new LinkedHashMap<>();
     static {
+        VALUE.put(Material.NETHER_STAR, 1_440_000L); // 40 netherite
         VALUE.put(Material.NETHERITE_INGOT, 36_000L);
         VALUE.put(Material.DIAMOND, 1_000L);
         VALUE.put(Material.GOLD_INGOT, 100L);
@@ -42,6 +51,7 @@ public final class Currency {
 
     /** Many low -> one high. Returns number of trades done. */
     public static int upgrade(Player p, Tier t, boolean max) {
+        if (t.sellOnly) return 0;
         int have = Items.count(p, t.low);
         int trades = max ? have / t.rate : (have >= t.rate ? 1 : 0);
         if (trades <= 0) return 0;
